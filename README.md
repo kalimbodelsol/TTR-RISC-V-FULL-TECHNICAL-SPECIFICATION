@@ -85,7 +85,7 @@ When these principles are applied to semiconductor design, we observe:
 | Standby Power | 8-50 mW | 151 nW | **50,000×** |
 | Thermal Density | 100 W/mm² | 36 W/mm² | **2.8×** |
 | Cache Hit Rate | 95% | 99% | **4% absolute** |
-| Clock Jitter | 5 ps | <2 ps | **2.5×** |
+| Clock Jitter | 5 ps | **Zero (Phase-Locked)**|
 
 **These are not incremental gains. This is a paradigm shift.**
 
