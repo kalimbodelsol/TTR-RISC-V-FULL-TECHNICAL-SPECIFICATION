@@ -453,12 +453,16 @@ Alternative (mixed):
 | Compatibility | Standard JEDEC | Non-standard (custom) |
 | Marketing | "2 GHz" sounds good | "2.16 GHz" sounds odd |
 
-**Recommendation for Module A (Production): 2.00 GHz**
-- Reason: Compatibility with existing ecosystems, cleaner PLL
+**Unified Standard: The 2.16 GHz Imperative**
 
-**Recommendation for Module B (Visionary): 2.16 GHz**
-- Reason: Full TTR/base-60 alignment, accepts slight non-standardness
+While 2.00 GHz offers convenient binary division, it severs the resonant link to the fundamental geometry of the MK-1 Torus (3.906 MHz).
 
+**Decision:**
+Both Module A and Module B will operate at **2.16 GHz** (or sub-harmonics thereof).
+
+- **Physics:** 2.16 GHz aligns with the 2160 sum of angles in a cube and the sexagesimal system (6 × 6 × 6 = 216).
+- **Biology:** This frequency allows exact integer division down to 100 Hz (Gamma waves) and 432 Hz (biological resonance), vital for the Bio-Interface.
+- **Marketing:** We define "2.16 GHz" as the "Nature-Native Frequency". We do not conform to JEDEC; JEDEC must eventually conform to Physics.
 ---
 
 ### 3.3 Golden Ratio Voltage Scaling
