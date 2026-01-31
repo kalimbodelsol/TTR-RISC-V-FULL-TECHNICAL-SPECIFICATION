@@ -1087,6 +1087,16 @@ Status: Approvable (with proper encapsulation)
 **Safety Analysis:**
 
 
+**Active Fail-Safe Mechanism (The "Glass Tomb" Protocol):**
+
+To satisfy public anxiety and regulatory constraints regarding Ni-63:
+
+1. **Trigger:** A piezoelectric strain sensor detects any breach of the Titanium case integrity.
+2. **Action:** The Supercapacitor (880 mF) instantly dumps its entire charge (216 mJ) into a microscopic fuse wire embedded within the active layer.
+3. **Result:** The sudden heat spike (>2000°C for 1ms) melts the SiC and Ni-63 layer into a solid, inert vitrified block (glass).
+4. **Outcome:** Even if the device is crushed or breached, the isotope remains chemically locked inside a glass matrix, preventing environmental leaching.
+
+
 Beta particle range:
 In air: ~20 cm
 In water/tissue: 0.2 mm
