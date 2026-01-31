@@ -1432,6 +1432,23 @@ DEF_RISCV_BUILTIN(__builtin_riscv_zx_sin, "zx_sin_df",
 
 **Compilation Example:**
 
+
+#### 9.2.1 The "Holographic" Optimizer Pass (Experimental)
+
+Standard compilers treat code as a linear sequence of events. The TTR-GCC compiler introduces a spatial optimization pass:
+
+**Concept:**
+Instead of unrolling loops linearly, the compiler maps matrix operations directly onto the hexagonal physical coordinates of the ALU array.
+
+**Mechanism:**
+1. **Pattern Recognition:** Detects nested loops with dependency distances matching hexagonal neighbors (6 neighbors vs 4).
+2. **Geometric Mapping:** Re-orders instructions to prioritize data flow along the 60°/120° axes of the chip routing.
+3. **Resonant Instruction Scheduling:** Inserts NOPs (no-ops) not just for latency, but to align instruction retirement with the beat of the harmonic clock, reducing phase noise power consumption.
+
+*Note: This transforms the software from a "list of commands" into a "standing wave" of data.*
+
+
+
 ```c
 // User code
 #include <math.h>
