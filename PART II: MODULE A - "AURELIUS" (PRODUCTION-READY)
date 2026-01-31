@@ -114,7 +114,7 @@ paper or demonstrated in a lab, it's not in Module A.
 | **CORE** | | |
 | ISA | RV64GC + Zx | RISC-V 64-bit with geometric extensions |
 | Pipeline | 5-stage in-order | IF, ID, EX, MEM, WB |
-| Clock | 2.000 GHz | 512× harmonic of 3.906 MHz |
+| Clock | 2.160 GHz | TTR Harmonic (60³ × 10 Hz) | Sexagesimal Harmonic: 60³ × 10 Hz = 216,000 × 10 kHz
 | IPC | 0.85 typical | Single-issue, in-order peak |
 | Branch prediction | 2-bit saturating | 1K entry BTB |
 | **MEMORY** | | |
