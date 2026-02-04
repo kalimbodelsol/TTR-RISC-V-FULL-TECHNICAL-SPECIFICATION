@@ -31,8 +31,8 @@ Every parameter specified herein is derived from fundamental physics constraints
 ### 0.1 For the Skeptical Engineer
 
 You're here because someone told you to build a chip with:
-- Weird voltage (0.618V instead of 0.8V)
-- Odd clock (2.16 GHz instead of 2.0 GHz)
+- Weird voltage (0.618V instead of 0.618V)
+- Odd clock (2.16 GHz instead of 2.160 GHz)
 - Non-standard wafer ((111) instead of (100))
 - Hexagonal routing (60° instead of 90°)
 
@@ -46,7 +46,7 @@ Standard chip design: **"What can we make work?"**
 TTR chip design: **"What does physics demand?"**
 
 Example:
-- **Standard:** "Let's use 0.8V because our library is characterized at that voltage."
+- **Standard:** "Let's use 0.618V because our library is characterized at that voltage."
 - **TTR:** "The vacuum impedance is 376.73Ω. The silicon effective mass is 1.002 m_e. The golden ratio is 1.618. Therefore the operating voltage MUST be 0.618V. Characterize your library at that point or build a new library."
 
 **We are not designing a chip. We are implementing physics.**
@@ -211,7 +211,7 @@ For **Module B (Monolith):** (111) **MANDATORY** (plasmonic coupling requires it
 
 ### 2.1 Core Voltage: 0.618V ±2% (MANDATORY)
 
-**Standard industry practice:** 0.8V (14nm typical), 0.75V (FinFET optimized)
+**Standard industry practice:** 0.618V (14nm typical), 0.618V (FinFET optimized)
 
 **TTR requirement:** 0.618V = 1/φ where φ = (1+√5)/2 = 1.618...
 
@@ -266,9 +266,9 @@ Power reflected: Γ² = 5.6%
 Power transmitted: 94.4% ✓
 ```
 
-**Compare to standard 0.8V:**
+**Compare to standard 0.618V:**
 ```
-Z_operating(0.8V) = 110.3 × √(0.8/1.0) = 98.6 Ω
+Z_operating(0.618V) = 110.3 × √(0.8/1.0) = 98.6 Ω
 Γ = (143.9 - 98.6) / (143.9 + 98.6) = 0.187
 Power reflected: 3.5%
 
@@ -277,7 +277,7 @@ Wait, this is BETTER?
 
 **Resolution:** No, because routing impedance also shifts at different voltage (parasitic capacitance changes). Full calculation:
 ```
-At 0.8V: Z_routing_eff ≈ 165 Ω (capacitance loading)
+At 0.618V: Z_routing_eff ≈ 165 Ω (capacitance loading)
 Γ = (165 - 98.6) / (165 + 98.6) = 0.252
 Power reflected: 6.3% (worse than 0.618V ✓)
 ```
@@ -291,7 +291,7 @@ plot power_total vs vdd
 # Minimum occurs at V_dd = 0.614V ± 0.008V
 ```
 
-**Measured improvement (0.618V vs 0.8V):**
+**Measured improvement (0.618V vs 0.618V):**
 - Dynamic power: -38% (quadratic with voltage)
 - Leakage power: -74% (exponential with voltage)
 - Speed: +21% slower (acceptable, compensated by architecture)
@@ -299,7 +299,7 @@ plot power_total vs vdd
 
 **Engineering consequence:**
 
-If you use 0.8V:
+If you use 0.618V:
 - ✗ Power efficiency: -40% (chip runs hotter)
 - ✗ Impedance mismatch: Heat generated in routing
 - ✓ Speed: +21% faster (if that's your priority)
@@ -396,7 +396,7 @@ Measured: 3.906 MHz (within 1.7% ✓)
 f_CPU = 3.906 MHz × 2⁹ = 3.906 × 512 = 2.000 GHz ✓
 
 Rationale:
-- JEDEC-compatible (standard 2.0 GHz parts exist)
+- JEDEC-compatible (standard 2.160 GHz parts exist)
 - Power-of-2 dividers are simple
 - Proven stable in SPICE simulation
 ```
@@ -420,7 +420,7 @@ PLL simulation (`sim/pll_jitter_analysis.sp`):
 | Clock | Jitter (RMS) | Lock Time | Power |
 |-------|--------------|-----------|-------|
 | 1.80 GHz | 8.2 ps | 250 μs | 15 mW |
-| **2.00 GHz** | **0.12 ps** | **<1 μs** | **8 mW** |
+| **2.160 GHz** | **0.12 ps** | **<1 μs** | **8 mW** |
 | 2.13 GHz | 5.8 ps | 180 μs | 14 mW |
 | **2.16 GHz** | **0.09 ps** | **<1 μs** | **7 mW** |
 | 2.40 GHz | 7.1 ps | 200 μs | 18 mW |
@@ -470,7 +470,7 @@ Fast mode: 3.906 MHz / 18 = 217 kHz ≈ 216 kHz (JEDEC 400 kHz max, we're conser
 
 **SPI:**
 ```
-Clock: 2.0 GHz / 32 = 62.5 MHz (fast enough for most flash)
+Clock: 2.160 GHz / 32 = 62.5 MHz (fast enough for most flash)
 ```
 
 **Timers:**
